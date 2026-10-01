@@ -67,7 +67,36 @@
             border-radius: 16px;
             padding: 25px;
         }
+details summary {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+details summary::after {
+    content: "▼";
+    font-size: 14px;
+    color: #888;
+}
+
+details[open] summary::after {
+    content: "▲";
+}
+
+.description {
+    margin-top: 18px;
+    margin-bottom: 22px;
+    padding: 16px;
+    background: #08080d;
+    border: 1px solid #292936;
+    border-radius: 10px;
+    color: #999;
+    line-height: 1.6;
+}
         .script-card h2 {
             font-size: 24px;
             margin-bottom: 20px;
@@ -149,11 +178,103 @@
 
         <h1 class="page-title">Bloxburg</h1>
 
-        <div class="script-card">
+<div class="script-card">
 
-            <h2>Weretools crack</h2>
+    <details>
+        <summary>Weretools crack</summary>
 
-            <div class="script-row">
+        <div class="description">
+            <p>
+                AUTOBUILD
+
+• Save, load, and manage builds with IDs
+• Pause/abort builds anytime
+• Resume builds anytime
+• Preview builds features (Preview your dream house before build)
+
+AUTOFARM (ALL JOBS SUPPORTED)
+
+Cashier (BFF)
+Delivery Person
+Teacher
+Fast Food Worker﻿﻿
+Fisherman﻿﻿
+Hairdresser﻿﻿
+Janitor﻿﻿
+Mechanic
+Miner
+Pizza Baker
+Seller
+Woodcutter
+Stocker
+
+Halloween Event
+Auto Collect Candy
+Auto Teleport to Match
+LEGIT MODE
+
+AUTO MOOD
+
+• Automatically restores mood during farming
+• Automatically return/get back to work
+
+
+
+
+
+
+AUTO COOK
+
+• Instantly cook any recipe you have unlocked
+
+
+AUTO SKILL
+
+• Auto Athletic
+• Auto Cooking
+• Auto Gaming
+• Auto Gardening
+• Auto Intelligence
+• Auto Music
+• Auto Painting
+• Auto Writing
+
+VEHICLES
+
+• Adjust vehicle speed
+• Adjust turning speeds
+• Adjust vehicle camber
+• Vehicle kick (kick players in your vehicle from the game)
+
+
+EXTRA UTILITIES
+
+• Fake messages/alerts/confirm boxes
+• House Finders
+• Free Camera
+• Seperate Build Website
+• Auto pay bills
+• Custom environment settings
+• Toggle all lights/doors
+• Remove negative mood effects
+• View Player Stats
+            </p>
+        </div>
+    </details>
+
+    <div class="script-row">
+
+        <div class="script-box" id="script">
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/uwudiller/weretools-public/refs/heads/main/loader.lua"))()
+        </div>
+
+        <button class="copy-button" onclick="copyScript()">
+            Copy
+        </button>
+
+    </div>
+
+</div>
 
                 <div class="script-box" id="script">
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/uwudiller/weretools-public/refs/heads/main/loader.lua"))()
