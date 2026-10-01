@@ -3,15 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SneakyScripts</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #08080d;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: rgba(10, 10, 17, 0.95);
+            border-bottom: 1px solid #20202b;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #7c5cff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 110px 20px 90px;
+            background:
+                radial-gradient(circle at 50% 20%, #25165c 0%, transparent 35%),
+                #08080d;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            font-weight: 900;
+            letter-spacing: -4px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #7c5cff;
+        }
+
+        .hero p {
+            color: #999;
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 26px;
+            border-radius: 10px;
+            background: #7c5cff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+            box-shadow: 0 10px 30px rgba(124, 92, 255, 0.25);
+        }
+
+        .hero-button:hover {
+            transform: translateY(-2px);
+            background: #8d70ff;
+        }
+
+        /* CATEGORIES */
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 25px 100px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #111118;
+            border: 1px solid #22222d;
+            border-radius: 16px;
+            padding: 28px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #7c5cff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-icon {
+            font-size: 35px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #888;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #20202b;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding-top: 80px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>SneakyScripts</h1>
-    <p>Welcome to SneakyScripts!</p>
 
-    <h2>Categories</h2>
+    <nav>
+        <div class="logo">
+            🥷 <span>Sneaky</span>Scripts
+        </div>
 
-    <button>Bloxburg</button>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#">Search</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Sneaky<span>Scripts</span></h1>
+
+        <p>
+            Your hub for Roblox scripts, tools and resources.
+            Find what you need and get started.
+        </p>
+
+        <a href="#categories" class="hero-button">
+            Browse Scripts →
+        </a>
+    </section>
+
+    <section class="section" id="categories">
+
+        <h2 class="section-title">Categories</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🏠</div>
+
+                <h3>Bloxburg</h3>
+
+                <p>
+                    Roblox Bloxburg scripts and tools.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎮</div>
+
+                <h3>Coming Soon</h3>
+
+                <p>
+                    More Roblox categories are coming soon.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚡</div>
+
+                <h3>More Coming Soon</h3>
+
+                <p>
+                    We're working on adding more scripts.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 SneakyScripts
+    </footer>
+
 </body>
 </html>
