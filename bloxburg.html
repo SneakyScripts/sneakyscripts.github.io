@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bloxburg - SneakyScripts</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #08080d;
+            color: white;
+            min-height: 100vh;
+        }
+
+        nav {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: #0a0a11;
+            border-bottom: 1px solid #20202b;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #7c5cff;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 50px;
+        }
+
+        .script-card {
+            background: #111118;
+            border: 1px solid #242430;
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .script-card h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .script-row {
+            display: flex;
+            gap: 12px;
+            align-items: stretch;
+        }
+
+        .script-box {
+            flex: 1;
+            background: #08080d;
+            border: 1px solid #292936;
+            border-radius: 10px;
+            padding: 16px;
+            color: #bdb8ff;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .copy-button {
+            border: none;
+            border-radius: 10px;
+            padding: 0 22px;
+            background: #7c5cff;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .copy-button:hover {
+            background: #8d70ff;
+            transform: translateY(-1px);
+        }
+
+        .copy-button.copied {
+            background: #28a745;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 100px;
+            border-top: 1px solid #20202b;
+            color: #666;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            .page-title {
+                font-size: 38px;
+            }
+
+            .script-row {
+                flex-direction: column;
+            }
+
+            .copy-button {
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            🥷 <span>Sneaky</span>Scripts
+        </div>
+
+        <a href="index.html">← Back to Home</a>
+    </nav>
+
+    <main class="container">
+
+        <h1 class="page-title">Bloxburg</h1>
+
+        <div class="script-card">
+
+            <h2>Weretools crack</h2>
+
+            <div class="script-row">
+
+                <div class="script-box" id="script">
+                    loadstring(game:HttpGet("https://raw.githubusercontent.com/uwudiller/weretools-public/refs/heads/main/loader.lua"))()
+                </div>
+
+                <button class="copy-button" onclick="copyScript()">
+                    Copy
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 SneakyScripts
+    </footer>
+
+    <script>
+        function copyScript() {
+            const script = document.getElementById("script").textContent.trim();
+            const button = document.querySelector(".copy-button");
+
+            navigator.clipboard.writeText(script).then(() => {
+                button.textContent = "Copied!";
+                button.classList.add("copied");
+
+                setTimeout(() => {
+                    button.textContent = "Copy";
+                    button.classList.remove("copied");
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
